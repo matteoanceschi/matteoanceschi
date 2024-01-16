@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Numerico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esercizio Numerico</h1>
+
+    <form id="numeroForm">
+        <label for="numeroInput">Inserisci un numero:</label>
+        <input type="number" id="numeroInput" required>
+        <button type="button" onclick="eseguiEsercizio()">Esegui</button>
+    </form>
+
+    <div id="risultato"></div>
+
+    <script>
+        function eseguiEsercizio() {
+            var numeroInput = document.getElementById('numeroInput').value;
+            var risultatoDiv = document.getElementById('risultato');
+            risultatoDiv.innerHTML = ''; // Pulisce il risultato precedente
+
+            // Stampa in successione i numeri da 1 al numero dato
+            for (var i = 1; i <= numeroInput; i++) {
+                risultatoDiv.innerHTML += i + '<br>';
+            }
+
+            // Calcola e stampa il 10% del numero in input
+            var percentuale = 0.1 * numeroInput;
+            risultatoDiv.innerHTML += `10% di ${numeroInput} è ${percentuale}`;
+        }
+    </script>
+
+</body>
+</html>
