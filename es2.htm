@@ -8,29 +8,24 @@
 <body>
 
 <script>
-  let contatore = 1;
+let contatore = 1;
 
-  function stampaTabellina() {
+function stampaTabellina() {
     for (let i = 1; i <= 10; i++) {
-      console.log(contatore * i);
+        console.log(contatore * i);
     }
-  }
+}
 
-  function avviaContatore() {
-    if (contatore <= 5) {
-      console.log(contatore);
-      contatore++;
+const intervallo = setInterval(() => {
+    console.log(contatore);
 
-      if (contatore > 5) {
+    if (contatore === 5) {
+        clearInterval(intervallo);
         stampaTabellina();
-      } else {
-        setTimeout(avviaContatore, 1000);
-      }
+    } else {
+        contatore++;
     }
-  }
-
-  // Avvia il contatore
-  avviaContatore();
+}, 1000);
 </script>
 
 </body>
