@@ -15,16 +15,7 @@
     </style>
 </head>
 <body>
-    <h1>Quadrati Statici</h1>
 
-    <div id="staticSquares">
-        <?php
-        for ($i = 0; $i < 10; $i++) {
-            $color = sprintf("#%06x", rand(0, 0xFFFFFF));
-            echo '<div class="square" style="background-color: ' . $color . '"></div>';
-        }
-        ?>
-    </div>
 
     <h2>Genera Quadrati Dinamici</h2>
 
@@ -47,6 +38,13 @@
                 dynamicSquares.appendChild(dynamicDiv);
             }
         }
+
+        function getRandomColor() {
+            return '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+    </script>
+</body>
+</html>
 
         function getRandomColor() {
             return '#' + Math.floor(Math.random()*16777215).toString(16);
