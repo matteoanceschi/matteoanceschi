@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .quadrato {
+            width: 40px;
+            height: 40px;
+            margin: 2px;
+            border: 2px solid black;
+            display: inline-block;
+        }
+
+        .pari {
+            background-color: #ddd;
+        }
+
+        .dispari {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let i = 1; i <= 100; i++) {
+                let quadrato = document.createElement("div");
+                quadrato.className = "quadrato " + (i % 2 === 0 ? "pari" : "dispari");
+                document.body.appendChild(quadrato);
+
+                if (i % 10 === 0) {
+                    document.body.appendChild(document.createElement("br"));
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
