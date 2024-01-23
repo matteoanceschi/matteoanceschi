@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatore e Tabellina</title>
+</head>
+<body>
+
+<script>
+  let contatore = 1;
+
+  function stampaTabellina() {
+    for (let i = 1; i <= 10; i++) {
+      console.log(contatore * i);
+    }
+  }
+
+  function avviaContatore() {
+    if (contatore <= 5) {
+      console.log(contatore);
+      contatore++;
+
+      if (contatore > 5) {
+        stampaTabellina();
+      } else {
+        setTimeout(avviaContatore, 1000);
+      }
+    }
+  }
+
+  // Avvia il contatore
+  avviaContatore();
+</script>
+
+</body>
+</html>
