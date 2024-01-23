@@ -3,51 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatore e Tabellina</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-  </style>
+  <title>Contatore e Tabelline</title>
 </head>
 <body>
 
-<h1>Contatore e Tabellina</h1>
-
-<div id="output"></div>
-
 <script>
-  function stampaTabellina() {
-    var tabellinaOutput = "<h2>Tabellina:</h2><ul>";
+  let contatore = 1;
 
-    for (var i = 1; i <= 10; i++) {
-      tabellinaOutput += "<li>" + i + "</li>";
+  function stampaTabellina(numero) {
+    let tabellinaOutput = "<p>Tabellina del " + numero + ":</p>";
+    for (let i = 1; i <= 10; i++) {
+      tabellinaOutput += numero * i + "<br>";
     }
-
-    tabellinaOutput += "</ul>";
     document.getElementById("output").innerHTML = tabellinaOutput;
   }
 
   function avviaContatore() {
-    var contatore = 1;
-
-    var intervallo = setInterval(function() {
-      document.getElementById("output").innerHTML = "<h2>Contatore:</h2><p>" + contatore + "</p>";
-
-      if (contatore === 5) {
-        clearInterval(intervallo);  // Ferma il contatore
-        stampaTabellina();
-      }
+    const intervallo = setInterval(() => {
+      console.log(contatore);
+      stampaTabellina(contatore);
 
       contatore++;
-    }, 1000);  // Intervallo di 1000 ms (1 secondo)
+
+      if (contatore > 10) {
+        clearInterval(intervallo);
+      }
+    }, 1000);
   }
 
-  // Avvia il contatore al caricamento della pagina
-  document.addEventListener("DOMContentLoaded", avviaContatore);
+  avviaContatore();
 </script>
+
+<div id="output"></div>
 
 </body>
 </html>
